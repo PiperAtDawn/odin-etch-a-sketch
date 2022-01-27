@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch-a-sketch</title>
+        <meta charset="utf-8">
+        <script src="./script.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div class="sidebar">
+                <fieldset>
+                    <legend>Choose color mode</legend>
+
+                    <label for="black">
+                        <input type="radio" id="black" name ="color-mode" checked>
+                        Black
+                    </label>
+
+                    <label for="rainbow">
+                        <input type="radio" id="rainbow" name ="color-mode">
+                        Rainbow
+                    </label>
+                </fieldset>
+                <div id="slider-container">
+                    <span>Squares per side: <span id="squares-text">16</span></span>
+                    <input type="range" id="slider" min="16" max="100" value="16" step="1">
+                </div>
+                <button id="reset">Reset</button>
+            </div>
+            <main>
+                <div class="sketchboard"></div>
+            </main>
+        </div>
+    </body>
+</html>
