@@ -20,12 +20,22 @@ const populate = () => {
     sketchboard.style.setProperty("--grid-rows", slider.value);
     for (i = 0; i < slider.value ** 2; i++) {
         const newBox = document.createElement("div");
+        newBox.setAttribute("data-brightness", "1");
+        newBox.classList = "box";
         newBox.addEventListener("mouseover", (e) => {
             if (colorMode === "rainbow") {
                 const randomColor = Math.floor(Math.random()*16777215).toString(16);
                 e.target.style.setProperty("--random-color", `#${randomColor}`);
             };
-            e.target.classList = colorMode;
+            if (colorMode === "darken") {
+                e.target.dataset.brightness = `${+e.target.dataset.brightness - 0.1}`;
+                if (e.target.dataset.brightness < 0) e.target.dataset.brightness = 0;
+                e.target.style.setProperty("--brightness", +e.target.dataset.brightness);
+                return;
+            }
+            e.target.dataset.brightness = "1";
+            e.target.style.setProperty("--brightness", 1);
+            e.target.classList = `box ${colorMode}`;
         });
         sketchboard.appendChild(newBox);
     };

@@ -81,6 +81,11 @@ main {
     grid-template-columns: repeat(var(--grid-rows), 1fr);
 }
 
+.box {
+    filter: brightness(var(--brightness));
+    background-color: white;
+}
+
 .black {
     background-color: black;
 }
