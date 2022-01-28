@@ -4,6 +4,8 @@
 
 :root {
     --grid-rows: 16;
+    --random-color: #ffffff;
+    --brightness: 1;
 }
 
 body {
@@ -29,6 +31,15 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
+}
+
+#color-chooser {
+    display: flex;
+    flex-direction: column;
+}
+
+#color-chooser > p {
+    margin-bottom: 5px;
 }
 
 #slider {
@@ -72,4 +83,12 @@ main {
 
 .black {
     background-color: black;
+}
+
+.rainbow {
+    background-color: var(--random-color);
+}
+
+.erase {
+    background-color: white;
 }

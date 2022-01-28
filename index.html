@@ -9,8 +9,8 @@
     <body>
         <div id="container">
             <div class="sidebar">
-                <fieldset>
-                    <legend>Choose color mode</legend>
+                <form id="color-chooser">
+                    <p>Choose color mode</p>
 
                     <label for="black">
                         <input type="radio" id="black" name ="color-mode" checked>
@@ -21,7 +21,12 @@
                         <input type="radio" id="rainbow" name ="color-mode">
                         Rainbow
                     </label>
-                </fieldset>
+
+                    <label for="erase">
+                        <input type="radio" id="erase" name ="color-mode">
+                        Erase
+                    </label>
+                </form>
                 <div id="slider-container">
                     <span>Squares per side: <span id="squares-text">16</span></span>
                     <input type="range" id="slider" min="16" max="100" value="16" step="1">
