@@ -31,12 +31,8 @@ const populate = () => {
     };
 };
 
-const dePopulate = () => {
-    sketchboard.innerHTML = "";
-};
-
 resetButton.addEventListener("click", () => {
-    dePopulate();
+    sketchboard.innerHTML = "";
     populate();
 });
 
